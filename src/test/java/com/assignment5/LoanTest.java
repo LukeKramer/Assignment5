@@ -45,7 +45,7 @@ public class LoanTest {
 
         person.getIncome();
 
-        person.editIncome(70000);
+        person = new Person.Builder().copy(person).Income(70000).build();
 
         String type = Clientfactory.getClientType(person.getIncome());
 
@@ -72,7 +72,7 @@ public class LoanTest {
 
         System.out.println(loan.getMaxAmount());
 
-        loan.editMaxAmount(500000);
+        loan = new Loan.Builder().copy(loan).maxLoanAmount(500000).build();
 
         System.out.println(loan.getMaxAmount());
 

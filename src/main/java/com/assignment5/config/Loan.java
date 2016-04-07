@@ -53,6 +53,14 @@ public class Loan implements Serializable{
             return this;
         }
 
+        public Builder copy(Loan value)
+        {
+            this.maxAmount = value.maxAmount;
+            this.minAmount = value.minAmount;
+
+            return this;
+        }
+
         public Loan build()
         {
             return new Loan(this);

@@ -40,7 +40,7 @@ public class ClientTest {
         Person  person = one.getPerson(1234,30000,"David","Keys","078-432984","keys@gmail.com");
 
         System.out.println(person.getFirstName());
-        person.editName("Luke");
+        person = new Person.Builder().copy(person).FirstName("Luke").build();
         System.out.println(person.getFirstName());
 
         Assert.assertSame(person.getFirstName(),"Luke");
@@ -57,9 +57,11 @@ public class ClientTest {
 
         Person  person = one.getPerson(1234,30000,"David","Keys","078-432984","keys@gmail.com");
 
-        System.out.println(person.getIncome());
-        person.editIncome(64000);
-        System.out.println(person.getIncome());
+
+        System.out.println(person.toString());
+
+        person = new Person.Builder().copy(person).Income(64000).build();
+        System.out.println(person.toString());
 
         Assert.assertEquals(person.getIncome(),64000);
 

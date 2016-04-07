@@ -47,10 +47,6 @@ public class Person implements Serializable {
         return income;
     }
 
-    public void editName(String value)
-    {
-        this.firstName = value;
-    }
     public void editIncome(long value)
     {
         this.income = value;
